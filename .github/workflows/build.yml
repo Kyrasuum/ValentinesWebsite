@@ -1,6 +1,12 @@
-name: Build pages
+name: Deploy/Build pages
 
 on:
+  push:
+    branches: ["master", "main"]
+    paths-ignore:
+    - '**/*.md'
+    - '**/*.github'
+  pull_request:
   workflow_dispatch:
   workflow_call:
 
@@ -29,3 +35,10 @@ jobs:
           if-no-files-found: ignore
           path: |
             ./source/dist/*
+
+      - name: Deploy gh-pages
+        continue-on-error: true
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: pages
+          folder: source/dist
