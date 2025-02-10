@@ -1,0 +1,31 @@
+name: Build pages
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build-pages:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4 #https://github.com/actions/checkout
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+          
+      - run: cd source && npm ci
+      - run: cd source && npm run build
+
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            ./source/dist/*
