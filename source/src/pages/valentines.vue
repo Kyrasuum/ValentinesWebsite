@@ -27,7 +27,7 @@
 
 				
 				<div v-if="isOpen && !happy" id="story" class="fullscreen row justify-center items-center">
-					<img :class="[this.NoIndex < this.NoText.length? '': 'leave']" class="col-shrink q-pa-xl" src="/assets/bubu.png" width="500" height="600"/>
+					<img :class="[this.NoIndex < this.NoText.length? '': 'leave']" class="col-shrink q-pa-xl" src="/bubu.png" width="500" height="600"/>
 
 					<div :class="[this.NoIndex < this.NoText.length? '': 'hide']" class="col column justify-center">
 						<div class="bg-grey-10 text-italic q-pa-xl">
@@ -45,12 +45,12 @@
 					</div>
 
 					
-					<img v-if="this.NoIndex < this.NoText.length" class="col-shrink q-pa-xl" src="/assets/dudu.png" width="500" height="600"/>
-					<img v-if="this.NoIndex >= this.NoText.length" class="col-shrink q-pa-xl" src="/assets/sad-dudu.png" width="500" height="600"/>
+					<img v-if="this.NoIndex < this.NoText.length" class="col-shrink q-pa-xl" src="/dudu.png" width="500" height="600"/>
+					<img v-if="this.NoIndex >= this.NoText.length" class="col-shrink q-pa-xl" src="/sad-dudu.png" width="500" height="600"/>
 				</div>
 				<div v-if="happy" class="fullscreen column justify-center items-center">
 					<h5 class="text-italic">Happy Valentines, my love</h5>
-					<img class="col-shrink q-pa-xl" src="/assets/goofs.png" width="500" height="600"/>
+					<img class="col-shrink q-pa-xl" src="/goofs.png" width="500" height="600"/>
 				</div>
 			</q-page>
 		</q-page-container>
