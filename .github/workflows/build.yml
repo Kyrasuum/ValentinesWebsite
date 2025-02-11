@@ -26,6 +26,7 @@ jobs:
           
       - run: cd source && npm ci
       - run: cd source && npm run build
+      - run: touch source/dist/.nojekyll
 
       - name: Deploy gh-pages
         continue-on-error: true
