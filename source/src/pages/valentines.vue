@@ -27,7 +27,7 @@
 
 				
 				<div v-if="isOpen && !happy" id="story" class="fullscreen row justify-center items-center">
-					<img :class="[this.NoIndex < this.NoText.length? '': 'leave']" class="col-shrink q-pa-xl" src="/bubu.png" width="500" height="600"/>
+					<img :class="[this.NoIndex < this.NoText.length? '': 'leave']" class="col-shrink q-pa-xl" :src="url + 'bubu.png'" width="500" height="600"/>
 
 					<div :class="[this.NoIndex < this.NoText.length? '': 'hide']" class="col column justify-center">
 						<div class="bg-grey-10 text-italic q-pa-xl">
@@ -45,12 +45,12 @@
 					</div>
 
 					
-					<img v-if="this.NoIndex < this.NoText.length" class="col-shrink q-pa-xl" src="/dudu.png" width="500" height="600"/>
-					<img v-if="this.NoIndex >= this.NoText.length" class="col-shrink q-pa-xl" src="/sad-dudu.png" width="500" height="600"/>
+					<img v-if="this.NoIndex < this.NoText.length" class="col-shrink q-pa-xl" :src="url + 'dudu.png'" width="500" height="600"/>
+					<img v-if="this.NoIndex >= this.NoText.length" class="col-shrink q-pa-xl" :src="url + 'sad-dudu.png'" width="500" height="600"/>
 				</div>
 				<div v-if="happy" class="fullscreen column justify-center items-center">
 					<h5 class="text-italic">Happy Valentines, my love</h5>
-					<img class="col-shrink q-pa-xl" src="/goofs.png" width="500" height="600"/>
+					<img class="col-shrink q-pa-xl" :src="url + 'goofs.png'" width="500" height="600"/>
 				</div>
 			</q-page>
 		</q-page-container>
@@ -77,6 +77,7 @@ export default defineComponent({
 			isOpen: false,
 			NoText: ["No :(", "Are you sure it's no?", "Are you REALLY REALLY sure it's no?", "Do you really want to make dudu sad?"],
 			NoIndex: 0,
+			url,
 		};
 	},
 	computed: {},

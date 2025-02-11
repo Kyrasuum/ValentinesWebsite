@@ -6,7 +6,7 @@ let base_url = '';
 if(import.meta.env.PROD) {
 	base_url = import.meta.env.VITE_ASSET_URL;
 } else {
-	base_url = 'http://localhost:3000/' + import.meta.env.VITE_ASSET_URL + '/';
+	base_url = 'http://localhost:3000' + import.meta.env.VITE_ASSET_URL;
 }
 const url = base_url
 const api = axios.create({ baseURL: url });
