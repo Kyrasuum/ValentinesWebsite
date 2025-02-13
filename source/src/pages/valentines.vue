@@ -31,7 +31,7 @@
 
 					<div :class="[this.NoIndex < this.NoText.length? '': 'hide', q.screen.gt.sm? 'col-6': 'col-12']" class="column justify-center">
 						<div :class="[q.screen.gt.sm? 'q-pa-xl q-ma-xl': 'q-pa-sm q-ma-sm']" class="bg-grey-10 text-italic">
-							<h5 class="q-pa-xs q-ma-xs"><u>Will you be my Valentine!</u></h5>
+							<h5 class="q-pa-xs q-ma-xs"><u>Will you be my Valentine?</u></h5>
 							<h6 class="q-pa-xs q-ma-xs">Do you accept?</h6>
 						</div>
 						<div :class="[q.screen.gt.md? 'q-pa-xl q-gutter-xl': 'q-pa-sm q-gutter-sm']" class="row">
