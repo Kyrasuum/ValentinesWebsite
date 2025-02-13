@@ -31,7 +31,7 @@
 
 					<div :class="[this.NoIndex < this.NoText.length? '': 'hide', q.screen.gt.sm? 'col-6': 'col-12']" class="column justify-center">
 						<div :class="[q.screen.gt.sm? 'q-pa-xl q-ma-xl': 'q-pa-sm q-ma-sm']" class="bg-grey-10 text-italic">
-							<h5 class="q-pa-xs q-ma-xs"><u>A Dudu would like you to be his Valentine!</u></h5>
+							<h5 class="q-pa-xs q-ma-xs"><u>Will you be my Valentine!</u></h5>
 							<h6 class="q-pa-xs q-ma-xs">Do you accept?</h6>
 						</div>
 						<div :class="[q.screen.gt.md? 'q-pa-xl q-gutter-xl': 'q-pa-sm q-gutter-sm']" class="row">
@@ -47,9 +47,11 @@
 					<img v-if="this.NoIndex < this.NoText.length" :class="[q.screen.gt.sm? 'col-3 q-pa-xl': 'col-7']" :src="url + 'dudu.png'" width="100%" height="auto"/>
 					<img v-if="this.NoIndex >= this.NoText.length" :class="[q.screen.gt.sm? 'col-3 q-pa-xl': 'col-7']" :src="url + 'sad-dudu.png'" width="100%" height="auto"/>
 				</div>
-				<div v-if="happy" class="fullscreen column justify-center items-center">
-					<h5 class="text-italic">Happy Valentines, my love</h5>
-					<img class="col-shrink q-pa-xl" :src="url + 'goofs.png'" width="100%" height="auto"/>
+				<div v-if="happy" class="fullscreen row justify-center items-center">
+					<h5 :class="[q.screen.gt.sm? 'col-4': 'col-5']" class="text-center text-italic">
+					    Happy Valentines, my love<br/>
+						<img class="col-12" :src="url + 'goofs.png'" width="100%" height="auto"/>
+					</h5>
 				</div>
 			</q-page>
 		</q-page-container>
@@ -77,7 +79,7 @@ export default defineComponent({
 		return {
 			happy: false,
 			isOpen: false,
-			NoText: ["No :(", "Are you sure it's no?", "Are you REALLY REALLY sure it's no?", "Do you really want to make dudu sad?"],
+			NoText: ["No :(", "Are you sure it's no?", "Are you REALLY REALLY sure it's no?", "Do you really want to make me sad?"],
 			NoIndex: 0,
 			url,
 			q,
